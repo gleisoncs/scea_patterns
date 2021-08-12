@@ -1,0 +1,5 @@
+Brief Description
+
+Web applications frequently allow users to browse large virtual lists, such as query result sets, which can not practically be transmitted to the client. Access to the list is usually read-only and bi-directional, and the list is often discarded after the first few elements are examined. Using entity beans to represent elements of such lists provides little benefit and drains system resources. In particular, finder methods do not provide caching, scrolling, and random access to result sets, and have limited selection capabilities.
+
+The Value List Handler design pattern provides a more efficient way to iterate a large, read-only list across tiers. A value list handler provides a client with an iterator for a virtual list that resides in another application tier. The iterator typically accesses a local ordered collection of Transfer Objects, representing a subrange of the large list. A Data Access Object usually manages access to the list data, and may provide caching.
